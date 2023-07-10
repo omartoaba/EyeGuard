@@ -3,12 +3,47 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeGuard.UI", "EyeGuard.UI\EyeGuard.UI.csproj", "{53C6BD9C-C82F-4C0E-AA98-7F232511C4DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeGuard.Core", "EyeGuard.Core\EyeGuard.Core.csproj", "{6740430E-9BFB-4A47-8724-2EA84255B05B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeGuard.ViewModels", "EyeGuard.ViewModels\EyeGuard.ViewModels.csproj", "{4518644D-7E29-4862-8687-41191CF41133}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeGuard.Application", "EyeGuard.Application\EyeGuard.Application.csproj", "{C9F7DB56-3B69-4213-A9C6-6C563F207CDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeGuard.UnitTests", "EyeGuard.UnitTests\EyeGuard.UnitTests.csproj", "{54B0C1E9-B1BB-4D52-9603-19646F5CF72F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53C6BD9C-C82F-4C0E-AA98-7F232511C4DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53C6BD9C-C82F-4C0E-AA98-7F232511C4DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53C6BD9C-C82F-4C0E-AA98-7F232511C4DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53C6BD9C-C82F-4C0E-AA98-7F232511C4DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6740430E-9BFB-4A47-8724-2EA84255B05B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6740430E-9BFB-4A47-8724-2EA84255B05B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6740430E-9BFB-4A47-8724-2EA84255B05B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6740430E-9BFB-4A47-8724-2EA84255B05B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4518644D-7E29-4862-8687-41191CF41133}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4518644D-7E29-4862-8687-41191CF41133}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4518644D-7E29-4862-8687-41191CF41133}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4518644D-7E29-4862-8687-41191CF41133}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9F7DB56-3B69-4213-A9C6-6C563F207CDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9F7DB56-3B69-4213-A9C6-6C563F207CDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9F7DB56-3B69-4213-A9C6-6C563F207CDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9F7DB56-3B69-4213-A9C6-6C563F207CDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54B0C1E9-B1BB-4D52-9603-19646F5CF72F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54B0C1E9-B1BB-4D52-9603-19646F5CF72F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54B0C1E9-B1BB-4D52-9603-19646F5CF72F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54B0C1E9-B1BB-4D52-9603-19646F5CF72F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4B4AD8E0-5482-44B0-A02E-A3A95339A18A}
 	EndGlobalSection
 EndGlobal
