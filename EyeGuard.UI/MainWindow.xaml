@@ -1,12 +1,117 @@
-﻿<Window x:Class="EyeGuard.UI.MainWindow"
+﻿<hc:Window x:Class="EyeGuard.UI.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
         xmlns:local="clr-namespace:EyeGuard.UI"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+        mc:Ignorable="d" NonClientAreaHeight="40" FontSize="13"
+        Height="450" Width="850">
+    <hc:Window.NonClientAreaContent>
+        <StackPanel Orientation="Horizontal" Margin="5" WindowChrome.IsHitTestVisibleInChrome="True" Opacity=".8">
+            <Viewbox Height="40" Width="40">
+                <Path Fill="Black" Data="M3 4V16H21V4H3M3 2H21C22.1 2 23 2.89 23 4V16C23 16.53 22.79 17.04 22.41 17.41C22.04 17.79 21.53 18 21 18H14V20H16V22H8V20H10V18H3C2.47 18 1.96 17.79 1.59 17.41C1.21 17.04 1 16.53 1 16V4C1 2.89 1.89 2 3 2M10.84 8.93C11.15 8.63 11.57 8.45 12 8.45C12.43 8.46 12.85 8.63 13.16 8.94C13.46 9.24 13.64 9.66 13.64 10.09C13.64 10.53 13.46 10.94 13.16 11.25C12.85 11.56 12.43 11.73 12 11.73C11.57 11.73 11.15 11.55 10.84 11.25C10.54 10.94 10.36 10.53 10.36 10.09C10.36 9.66 10.54 9.24 10.84 8.93M10.07 12C10.58 12.53 11.28 12.82 12 12.82C12.72 12.82 13.42 12.53 13.93 12C14.44 11.5 14.73 10.81 14.73 10.09C14.73 9.37 14.44 8.67 13.93 8.16C13.42 7.65 12.72 7.36 12 7.36C11.28 7.36 10.58 7.65 10.07 8.16C9.56 8.67 9.27 9.37 9.27 10.09C9.27 10.81 9.56 11.5 10.07 12M6 10.09C6.94 7.7 9.27 6 12 6C14.73 6 17.06 7.7 18 10.09C17.06 12.5 14.73 14.18 12 14.18C9.27 14.18 6.94 12.5 6 10.09Z"
+                       />
+            </Viewbox>
+            <TextBlock Margin="8 0 0 0" Text="Eye Guard" FontSize="20" FontWeight="Bold"
+                       VerticalAlignment="Center"/>
+        </StackPanel>
+    </hc:Window.NonClientAreaContent>
+    <hc:Window.Resources>
+        <DropShadowEffect x:Key="shadowEffect" Opacity=".2"  ShadowDepth="0"/>
+    </hc:Window.Resources>
+    <TabControl TabStripPlacement="Left" Margin="0 0 00 0">
+        <TabItem Header="Settings" IsSelected="True">
+            <Grid Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border CornerRadius="5" Effect="{StaticResource shadowEffect}" Background="White" Grid.Column="1" Margin="2" >
+            <StackPanel Orientation="Horizontal" Margin="8">
+                <Viewbox Width="30" Height="30" Margin="8 0">
+                    <Path Fill="Black" Opacity=".8" Data="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.21,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.21,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.67 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z"/>
+                </Viewbox>
+                <StackPanel Margin="10 0">
+                    <TextBlock Text="Settings" FontSize="18" FontWeight="Bold"/>
+                    <TextBlock Text="Change Application setttings" Opacity=".6" FontSize="12"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+        <Border CornerRadius="5" Effect="{StaticResource shadowEffect}" Background="White" Grid.Column="2" Margin="2">
+            <StackPanel Orientation="Horizontal" Margin="8">
+                <Viewbox Width="30" Height="30" Margin="8 0">
+                    <Path Fill="Black" Opacity=".8" Data="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.21,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.21,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.67 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z"/>
+                </Viewbox>
+                <StackPanel Margin="10 0">
+                    <TextBlock Text="Settings" FontSize="18" FontWeight="Bold"/>
+                    <TextBlock Text="Change Application setttings" Opacity=".6" FontSize="12"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+        <Border CornerRadius="5" Effect="{StaticResource shadowEffect}" Background="White" Grid.Column="1" Margin="2 0" Grid.Row="1">
+            <Grid Margin="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock  VerticalAlignment="Center" Text="Take long break every"/>
+                <StackPanel VerticalAlignment="Center" Orientation="Horizontal" Grid.Column="2">
+                    <ComboBox MinWidth="60" ItemsSource="{Binding LongBreakPeriods}" />
+                    <TextBlock Text="For" VerticalAlignment="Center" Margin="8 0" />
+                    <ComboBox MinWidth="60" ItemsSource="{Binding LongBreakPeriods}"/>
+                </StackPanel>
+                <TextBlock VerticalAlignment="Center" Grid.Row="1" Text="Take short break every"/>
+                <StackPanel Margin="0 8" Grid.Row="1" Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center">
+                   <ComboBox MinWidth="60" ItemsSource="{Binding LongBreakPeriods}" />
+                   <TextBlock Text="For" Margin="8 0" VerticalAlignment="Center"/>
+                   <ComboBox MinWidth="60" ItemsSource="{Binding LongBreakPeriods}" />
+                </StackPanel>
+                <TextBlock VerticalAlignment="Center" Grid.Row="2" Text="Notify me about long break"/>
+                <ComboBox Grid.Row="2" Margin="0 8" ItemsSource="{Binding LongBreakPeriods}" Grid.Column="2"/>
+                <TextBlock VerticalAlignment="Center" Grid.Row="3" Text="Display full window in short breaks"/>
+                <ToggleButton Style="{StaticResource ToggleButtonSwitch}" HorizontalAlignment="Left" Grid.Row="3" Grid.Column="2"/>
+                <TextBlock VerticalAlignment="Center" Grid.Row="4" Text="Enable inactivity tracker"/>
+                <ToggleButton Style="{StaticResource ToggleButtonSwitch}" HorizontalAlignment="Left" Margin="0 8" Grid.Row="4" Grid.Column="2"/>
+                <TextBlock VerticalAlignment="Center" Grid.Row="5" Text="Enable sounds"/>
+                <ToggleButton Style="{StaticResource ToggleButtonSwitch}" HorizontalAlignment="Left" Margin="0 0 0 8" Grid.Row="5" Grid.Column="2"/>
+                <TextBlock VerticalAlignment="Center" Grid.Row="6" Text="Enable notifications"/>
+                <ToggleButton Style="{StaticResource ToggleButtonSwitch}" HorizontalAlignment="Left" Grid.Row="6" Grid.Column="2"/>
+                <!--<StackPanel Grid.Column="1" Margin="0 8">
+                    <ComboBox ItemsSource="{Binding ShortBreakPeriods}" Margin="2 5"/>
+                    <ComboBox ItemsSource="{Binding LongBreakNotificationsPeriods}"/>
+                </StackPanel>-->
+            </Grid>
+        </Border>
+        <Border CornerRadius="5" Effect="{StaticResource shadowEffect}" Background="White" Grid.Column="2" Margin="2 0" Grid.Row="1"/>
+        <Border Grid.RowSpan="2" Width="65" Background="White" Margin="-5 -5 5 -5" Effect="{StaticResource shadowEffect}">
+            
+        </Border>
     </Grid>
-</Window>
+        </TabItem>
+        <TabItem Padding="2"  IsSelected="True">
+            <TabItem.Header>
+                <Border CornerRadius="5" Width="60" Height="50" Padding="5" Background="{DynamicResource BackgroundBrush}">
+                    <TextBlock Text="Timer"/>
+                </Border>
+            </TabItem.Header>
+        </TabItem>
+    </TabControl>
+</hc:Window>
