@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\EyeGuard.Core\EyeGuard.Core.csproj" />
+  </ItemGroup>
+
 </Project>
