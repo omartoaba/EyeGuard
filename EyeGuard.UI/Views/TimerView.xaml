@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="EyeGuard.UI.Views.TimerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EyeGuard.UI.Views"
+             xmlns:hc="https://handyorg.github.io/handycontrol" FontSize="13"
+             mc:Ignorable="d" Background="{StaticResource defaultBackground}"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border Style="{StaticResource BorderRegion}" Effect="{StaticResource shadowEffect}" Margin="10">
+            <StackPanel>
+                <TextBlock Text="Time to next stop" FontSize="15" FontWeight="Bold"/>
+                <hc:FlipClock HorizontalAlignment="Center" Margin="0 10"/>
+                <Button Content="Reset" HorizontalAlignment="Center" Margin="0 10"/>
+            </StackPanel>
+        </Border>
+        <Border Padding="5" Style="{StaticResource BorderRegion}" Grid.Row="1" Margin="10" Effect="{StaticResource shadowEffect}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Take long break every" VerticalAlignment="Center"
+                           />
+                <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal">
+                    <ComboBox MinWidth="80" Margin="8 0"/>
+                    <TextBlock Text="For" Margin="8 0" VerticalAlignment="Center"
+                               HorizontalAlignment="Center"/>
+                    <ComboBox Margin="8 0" MinWidth="80"/>
+                </StackPanel>
+                <TextBlock Margin="0 10" Text="Take long break every" VerticalAlignment="Center"
+                           Grid.Row="1"/>
+                <StackPanel Margin="0 10" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal">
+                    <ComboBox MinWidth="80" Margin="8 0"/>
+                    <TextBlock Text="For" Margin="8 0" VerticalAlignment="Center"
+                               HorizontalAlignment="Center"/>
+                    <ComboBox Margin="8 0" MinWidth="80"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>
