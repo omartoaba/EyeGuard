@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EyeGuard.ViewModels.ViewModels
+namespace EyeGuard.ViewModels
 {
-    internal class DisplayView
+    public class DisplayViewModel
     {
     }
 }

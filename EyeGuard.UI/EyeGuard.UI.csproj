@@ -28,6 +28,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\EyeGuard.Application\EyeGuard.Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Resources\cloud.png" />
   </ItemGroup>
 

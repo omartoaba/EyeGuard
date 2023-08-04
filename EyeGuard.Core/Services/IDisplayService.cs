@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EyeGuard.Core.Services
+namespace EyeGuard.Core
 {
-    internal interface IDisplayService
+    public interface IDisplayService
     {
+        int GetBrightness();
+        int GetContrast();
+        bool SetBrightness(int brightness);
+        void SetContrast(int contrast);
     }
 }

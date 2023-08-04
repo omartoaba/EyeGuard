@@ -30,7 +30,7 @@
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
-                    <Slider Maximum="9000" Minimum="1500" TickFrequency="10" VerticalAlignment="Center"
+                    <Slider Maximum="9000" Minimum="1500" TickFrequency="10" VerticalAlignment="Center" 
                             BorderBrush="{StaticResource DarkAccentBrush}" AutoToolTipPlacement="TopLeft" AutoToolTipPrecision="0" />
                     <Button Grid.Column="1" Content="Reset" Margin ="5 0"/>
                     <Rectangle Grid.Row="1" Height="10" Margin="8 0">
@@ -50,7 +50,7 @@
                     </Rectangle>
                     <TextBlock Text="Cold" Grid.Row="2" HorizontalAlignment="Right" Margin="0 5"/>
                     <TextBlock Text="Warm" Grid.Row="2" Margin="0 5"/>
-                    <Slider Grid.Row="3"  Maximum="100" Minimum="0" TickFrequency="1" VerticalAlignment="Center"
+                    <Slider x:Name="brightness" Grid.Row="3"  Maximum="100" Minimum="0" TickFrequency="1" VerticalAlignment="Center" Value="10"
                             Margin="0 10 0 10" AutoToolTipPlacement="TopLeft" AutoToolTipPrecision="0"/>
                     <Button Grid.Column="1" Grid.Row="3" Content="Reset" Margin ="5 0"/>
                     <Rectangle Grid.Row="4" Height="10" Margin="8 0">
