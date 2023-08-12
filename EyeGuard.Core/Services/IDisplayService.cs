@@ -8,6 +8,7 @@ namespace EyeGuard.Core
 {
     public interface IDisplayService
     {
+        public MonitorInfo Monitors { get; set; }
         int GetBrightness();
         int GetContrast();
         bool SetBrightness(int brightness);

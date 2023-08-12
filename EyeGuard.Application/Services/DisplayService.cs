@@ -1,4 +1,5 @@
-﻿using EyeGuard.Core;
+﻿using EyeGuard.Application;
+using EyeGuard.Core;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -13,9 +14,11 @@ namespace EyeGuard.Application;
 public class DisplayService : IDisplayService,IDisposable
 {
     BrightnessHelper _brightnessController;
+    ScreenWarmthHelper _screenWarmthHelper;
     public DisplayService()
     {
         _brightnessController = new();
+        _screenWarmthHelper = new();
     }
     public bool SetBrightness(int brightness)
     {
@@ -24,7 +27,7 @@ public class DisplayService : IDisplayService,IDisposable
 
     public void SetContrast(int contrast)
     {
-        throw new NotImplementedException();
+        _screenWarmthHelper.SetColorTemperature(contrast);
     }
 
     public int GetBrightness()
@@ -34,7 +37,7 @@ public class DisplayService : IDisplayService,IDisposable
 
     public int GetContrast()
     {
-        throw new NotImplementedException();
+       return _screenWarmthHelper.GetColorTemperature();
     }
 
     public void Dispose()

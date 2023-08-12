@@ -23,15 +23,17 @@ namespace EyeGuard.UI.Views
     public partial class DisplayView : UserControl
     {
         DisplayService display = new(); 
+
         public DisplayView()
         {
             InitializeComponent();
-            brightness.Value = display.GetBrightness();
-            brightness.ValueChanged += Slider_ValueChanged;
+            // brightness.Value = display.GetBrightness();
+            //  brightness.ValueChanged += Slider_ValueChanged;
+            warmth.ValueChanged += Slider_ValueChanged;
         }
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-             
+           // display.SetContrast((int)e.NewValue);
             display.SetBrightness((int)e.NewValue);
         }
     }
