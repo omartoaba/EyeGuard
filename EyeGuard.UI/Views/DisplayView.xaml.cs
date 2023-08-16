@@ -33,8 +33,8 @@ namespace EyeGuard.UI.Views
         }
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-           // display.SetContrast((int)e.NewValue);
-            display.SetBrightness((int)e.NewValue);
+            display.SetContrast((int)e.NewValue);
+          //  display.SetBrightness((int)e.NewValue);
         }
     }
 }

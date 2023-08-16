@@ -15,34 +15,38 @@ public class DisplayService : IDisplayService,IDisposable
 {
     BrightnessHelper _brightnessController;
     ScreenWarmthHelper _screenWarmthHelper;
+
+    public MonitorInfo Monitors { get;  set; }
+
     public DisplayService()
     {
         _brightnessController = new();
         _screenWarmthHelper = new();
     }
-    public bool SetBrightness(int brightness)
+    public bool SetBrightness(int brightness, MonitorInfo monitorInfo)
     {
-       return _brightnessController.Set((uint)brightness);
+       return _brightnessController.Set((uint)brightness,monitorInfo);
     }
 
-    public void SetContrast(int contrast)
+    public void SetContrast(int contrast, MonitorInfo monitorInfo)
     {
-        _screenWarmthHelper.SetColorTemperature(contrast);
+        _screenWarmthHelper.SetColorTemperature(contrast,monitorInfo);
     }
 
-    public int GetBrightness()
+    public int GetBrightness(MonitorInfo monitorInfo)
     {
-        return _brightnessController.Get();
+        return _brightnessController.Get(monitorInfo);
     }
 
-    public int GetContrast()
+    public int GetContrast(MonitorInfo monitorInfo)
     {
-       return _screenWarmthHelper.GetColorTemperature();
+       return _screenWarmthHelper.GetColorTemperature(monitorInfo);
     }
 
     public void Dispose()
     {
         _brightnessController?.Dispose();
+        _screenWarmthHelper?.Dispose();
     }
 }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EyeGuard.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -13,16 +14,22 @@ namespace EyeGuard.Application
         [DllImport("dxva2.dll", EntryPoint = "GetNumberOfPhysicalMonitorsFromHMONITOR")]
         [return: MarshalAs(UnmanagedType.Bool)]
         internal static extern bool GetNumberOfPhysicalMonitorsFromHMONITOR(IntPtr hMonitor, ref uint pdwNumberOfPhysicalMonitors);
-
-        [DllImport("user32.dll")]
+        [DllImport("dxva2.dll", EntryPoint = "GetMonitorBrightness")]
         [return: MarshalAs(UnmanagedType.Bool)]
-        internal static extern bool SetMonitorColorTemperature(PHYSICAL_MONITOR monitor);
+        internal static extern bool GetMonitorBrightness(IntPtr handle, ref uint minimumBrightness, ref uint currentBrightness, ref uint maxBrightness);
+
+        [DllImport("dxva2.dll", EntryPoint = "SetMonitorBrightness")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        internal static extern bool SetMonitorBrightness(IntPtr handle, uint newBrightness);
+        [DllImport("Dxva2.dll", EntryPoint = "SetMonitorColorTemperature")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        internal static extern bool SetMonitorColorTemperature(IntPtr handle, MC_COLOR_TEMPERATURE ctCurrentColorTemperature);
         [DllImport("dxva2.dll", EntryPoint = "GetPhysicalMonitorsFromHMONITOR")]
         [return: MarshalAs(UnmanagedType.Bool)]
         internal static extern bool GetPhysicalMonitorsFromHMONITOR(IntPtr hMonitor, uint dwPhysicalMonitorArraySize, [Out] PHYSICAL_MONITOR[] pPhysicalMonitorArray);
         [DllImport("dxva2.dll", EntryPoint = "GetMonitorCapabilities")]
         [return: MarshalAs(UnmanagedType.Bool)]
-        internal static extern bool GetMonitorCapabilities(IntPtr hMonitor, out uint pdwMonitorCapabilities, out uint pdwSupportedColorTemperatures);
+        internal static extern bool GetMonitorCapabilities(IntPtr hMonitor, [Out] uint pdwMonitorCapabilities, [Out] uint pdwSupportedColorTemperatures);
         [DllImport("dxva2.dll", EntryPoint = "DestroyPhysicalMonitor")]
         [return: MarshalAs(UnmanagedType.Bool)]
         internal static extern bool DestroyPhysicalMonitor(IntPtr hMonitor);

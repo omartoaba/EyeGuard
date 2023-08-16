@@ -9,9 +9,9 @@ namespace EyeGuard.Core
     public interface IDisplayService
     {
         public MonitorInfo Monitors { get; set; }
-        int GetBrightness();
-        int GetContrast();
-        bool SetBrightness(int brightness);
-        void SetContrast(int contrast);
+        int GetBrightness(MonitorInfo monitorInfo);
+        int GetContrast(MonitorInfo monitorInfo);
+        bool SetBrightness(int brightness,MonitorInfo monitorInfo);
+        void SetContrast(int contrast, MonitorInfo monitorInfo);
     }
 }
