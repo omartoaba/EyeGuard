@@ -16,8 +16,6 @@ public class DisplayService : IDisplayService,IDisposable
     BrightnessHelper _brightnessController;
     ScreenWarmthHelper _screenWarmthHelper;
 
-    public MonitorInfo Monitors { get;  set; }
-
     public DisplayService()
     {
         _brightnessController = new();
@@ -47,6 +45,15 @@ public class DisplayService : IDisplayService,IDisposable
     {
         _brightnessController?.Dispose();
         _screenWarmthHelper?.Dispose();
+    }
+
+    public IEnumerable<MonitorInfo> GetMonitors()
+    {
+       return _brightnessController.Monitors;
+    }
+    public void RefreshMonitors()
+    {
+       
     }
 }
 

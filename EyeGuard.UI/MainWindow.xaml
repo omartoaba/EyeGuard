@@ -8,7 +8,7 @@
         xmlns:views="clr-namespace:EyeGuard.UI.Views"  
         ResizeMode="CanMinimize"   
         mc:Ignorable="d" NonClientAreaHeight="40" FontSize="13"
-        Height="450" Width="850">
+        Height="500" Width="850">
     <hc:Window.NonClientAreaContent>
         <StackPanel Orientation="Horizontal" Margin="5" WindowChrome.IsHitTestVisibleInChrome="True" Opacity=".8">
             <Viewbox Height="40" Width="40">

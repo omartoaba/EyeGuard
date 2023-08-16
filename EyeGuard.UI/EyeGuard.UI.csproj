@@ -29,6 +29,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EyeGuard.Application\EyeGuard.Application.csproj" />
+    <ProjectReference Include="..\EyeGuard.ViewModels\EyeGuard.ViewModels.csproj" />
   </ItemGroup>
 
   <ItemGroup>

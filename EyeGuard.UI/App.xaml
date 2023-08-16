@@ -3,8 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:EyeGuard.UI"
              xmlns:hc="https://handyorg.github.io/handycontrol"             
-             xmlns:o="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
-             StartupUri="MainWindow.xaml">
+             xmlns:o="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
