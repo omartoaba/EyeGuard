@@ -8,7 +8,7 @@ namespace EyeGuard.Core
 {
     public interface IDisplayService
     {
-        IEnumerable<MonitorInfo> GetMonitors();
+        IEnumerable<MonitorInfo> Monitors { get; }
         int GetBrightness(MonitorInfo monitorInfo);
         int GetContrast(MonitorInfo monitorInfo);
         bool SetBrightness(int brightness,MonitorInfo monitorInfo);

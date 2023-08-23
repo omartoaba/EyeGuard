@@ -32,6 +32,6 @@
         <TabItem Padding="2" Header="Timer" IsSelected="True">
             <views:TimerView/>
         </TabItem>
-        <TabItem Header="About"/>
+        <TabItem Header ="About"/>
     </TabControl>
 </hc:Window>

@@ -57,7 +57,7 @@ namespace EyeGuard.ViewModels
             _displayService = displayService;
             CanChangeBrightness = false; 
             CanChangeContrast = false;
-            Monitors = _displayService.GetMonitors();
+            Monitors = _displayService.Monitors;
         }
 
 
