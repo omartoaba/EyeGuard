@@ -15,7 +15,7 @@ namespace EyeGuard.Core
         public string MonitorName { get; set; }
         public uint SupportedColorTemperatures { get; set; }
         public uint MonitorCapabilities { get; set; }
-        public bool CanChangeBrightness { get; set; }
-        public bool CanChangeContrast { get; set; }
+        public bool CanChangeBrightness { get; set; } = false;
+        public bool CanChangeColorTemperature { get; set; } = false;
     }
 }

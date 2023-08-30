@@ -15,7 +15,7 @@
         <Border Style="{StaticResource BorderRegion}" Effect="{StaticResource shadowEffect}" Margin="10">
             <StackPanel>
                 <TextBlock Text="Time to next stop" FontSize="15" FontWeight="Bold"/>
-                <hc:FlipClock HorizontalAlignment="Center" Margin="0 10"/>
+                <hc:FlipClock x:Name="clock" HorizontalAlignment="Center" Margin="0 10" />
                 <Button Content="Reset" HorizontalAlignment="Center" Margin="0 10"/>
             </StackPanel>
         </Border>
@@ -37,7 +37,9 @@
                     <ComboBox MinWidth="80" Margin="8 0"/>
                     <TextBlock Text="For" Margin="8 0" VerticalAlignment="Center"
                                HorizontalAlignment="Center"/>
-                    <ComboBox Margin="8 0" MinWidth="80"/>
+                    <ComboBox Margin="8 0" MinWidth="80">
+                        
+                    </ComboBox>
                 </StackPanel>
                 <TextBlock Margin="0 10" Text="Take long break every" VerticalAlignment="Center"
                            Grid.Row="1"/>

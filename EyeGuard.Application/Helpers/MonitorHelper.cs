@@ -1,6 +1,7 @@
 ﻿using EyeGuard.Core;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,15 +34,15 @@ namespace EyeGuard.Application
                         monitorInfo.MaxValue = maxValue;
                         monitorInfo.CurrentValue = currentValue;
                     }
-                    else monitorInfo.CanChangeBrightness = false;
-                    uint PdwMonitorCapabilities = 0, PdwSupportedColorTemperatures = 0;
-                    if (NativeAPI.GetMonitorCapabilities(physicalMonitor.hPhysicalMonitor,  PdwMonitorCapabilities,  PdwSupportedColorTemperatures))
+                    uint PdwMonitorCapabilities = 0, PdwSupportedColorTemperatures = 0;          
+                    if (NativeAPI.GetMonitorCapabilities(physicalMonitor.hPhysicalMonitor,ref  PdwMonitorCapabilities, ref PdwSupportedColorTemperatures))
                     {
-                        monitorInfo.CanChangeContrast = true;
+                        monitorInfo.CanChangeColorTemperature = true;
                         monitorInfo.SupportedColorTemperatures = PdwSupportedColorTemperatures;
+
                         monitorInfo.MonitorCapabilities = PdwMonitorCapabilities;
-                    }
-                    if (!monitorInfo.CanChangeBrightness && !monitorInfo.CanChangeContrast)
+                    } 
+                    if (!monitorInfo.CanChangeBrightness && !monitorInfo.CanChangeColorTemperature)
                         NativeAPI.DestroyPhysicalMonitor(physicalMonitor.hPhysicalMonitor);
                     else availibleMonitors.Add(monitorInfo);
                 }

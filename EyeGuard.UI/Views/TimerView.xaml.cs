@@ -23,6 +23,7 @@ namespace EyeGuard.UI.Views
         public TimerView()
         {
             InitializeComponent();
+            
         }
     }
 }

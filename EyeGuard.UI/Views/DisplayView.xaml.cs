@@ -28,6 +28,9 @@ namespace EyeGuard.UI.Views
         {
             InitializeComponent();
             DataContext = App.AppHost.Services.GetService<DisplayViewModel>();
+            var display = new DisplayService();
+            var handle = new WindowInteropHelper(System.Windows.Application.Current.MainWindow).Handle;
+            display.GetContrast(new Core.MonitorInfo { Handle = handle });
         }
     }
 }

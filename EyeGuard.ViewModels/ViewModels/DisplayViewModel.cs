@@ -17,11 +17,15 @@ namespace EyeGuard.ViewModels
         [ObservableProperty]
         private int _minimumBrightness = 0;
         [ObservableProperty]
+        private int _maximumColorTemperature = 6500;
+        [ObservableProperty]
+        private int _minimumColorTemperature = 0;
+        [ObservableProperty]
         private IEnumerable<MonitorInfo> _monitors;
         [ObservableProperty]
         private bool _canChangeBrightness;
         [ObservableProperty]
-        private bool _canChangeContrast;
+        private bool _canChangeColorTemperature;
         private MonitorInfo _selectedMonitor;
 
         public MonitorInfo SelectedMonitor
@@ -33,7 +37,8 @@ namespace EyeGuard.ViewModels
                 {
                     CurrentBrightness = (int)SelectedMonitor.CurrentValue;
                     CanChangeBrightness = SelectedMonitor.CanChangeBrightness;
-                    CanChangeContrast = SelectedMonitor.CanChangeContrast;
+                    CanChangeColorTemperature = SelectedMonitor.CanChangeColorTemperature;
+                   // _displayService.GetContrast(SelectedMonitor);
                 }
             }
         }
@@ -56,10 +61,9 @@ namespace EyeGuard.ViewModels
         {
             _displayService = displayService;
             CanChangeBrightness = false; 
-            CanChangeContrast = false;
+            CanChangeColorTemperature = false;
             Monitors = _displayService.Monitors;
+          
         }
-
-
     }
 }
