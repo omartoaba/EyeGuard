@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EyeGuard.ViewModels;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,7 +25,7 @@ namespace EyeGuard.UI.Views
         public TimerView()
         {
             InitializeComponent();
-            
+            DataContext = App.AppHost.Services.GetService<TimerViewModel>();
         }
     }
 }

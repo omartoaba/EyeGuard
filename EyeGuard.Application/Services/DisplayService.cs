@@ -32,7 +32,7 @@ public class DisplayService : IDisplayService,IDisposable
     }
     public bool SetBrightness(int brightnessValue, MonitorInfo monitorInfo)
     {
-        //To ensure that the monitor is still available is the caller requested a refresh 
+        //To ensure that the monitor is still available if the caller requested a refresh 
         var monitor = Monitors.FirstOrDefault(m => m.Handle == monitorInfo.Handle);
         if(monitor is null ||!monitor.CanChangeBrightness)
             return false;
@@ -65,19 +65,19 @@ public class DisplayService : IDisplayService,IDisposable
 
     public unsafe int GetContrast(MonitorInfo monitorInfo)
     {
-        var result = new NativeAPI.RAMP();
-        var handle = Graphics.FromHwnd(monitorInfo.Handle).GetHdc().ToInt32();
-        var success = NativeAPI.GetDeviceGammaRamp(handle, ref result);
-        double[] colors = TemperatureToColors(4000);
-        //var currentRammp = new ushort[256 * 3];
-        //result.Red.CopyTo(currentRammp, 0);
-        //result.Green.CopyTo(currentRammp, 256);
-        //result.Blue.CopyTo(currentRammp, 256 * 2);
-        //ushort* rammps = GenerateGammaRampValues(colors, currentRammp, handle);
+        //var result = new NativeAPI.RAMP();
+        //var handle = Graphics.FromHwnd(monitorInfo.Handle).GetHdc().ToInt32();
+        //var success = NativeAPI.GetDeviceGammaRamp(handle, ref result);
+        //double[] colors = TemperatureToColors(4000);
+        ////var currentRammp = new ushort[256 * 3];
+        ////result.Red.CopyTo(currentRammp, 0);
+        ////result.Green.CopyTo(currentRammp, 256);
+        ////result.Blue.CopyTo(currentRammp, 256 * 2);
+        ////ushort* rammps = GenerateGammaRampValues(colors, currentRammp, handle);
 
-        new ScreenWarmthHelper().SetColorTemperature(1200, monitorInfo);
+        //new ScreenWarmthHelper().SetColorTemperature(1200, monitorInfo);
 
-        NativeAPI.SetDeviceGammaRamp(handle, ref result);
+        //NativeAPI.SetDeviceGammaRamp(handle, ref result);
         return -1;
     }
     public static unsafe bool SetBrightness(short brightness,Int32 hdc)

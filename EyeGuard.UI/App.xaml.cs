@@ -28,6 +28,8 @@ namespace EyeGuard.UI
                           {
                               s.AddSingleton<IDisplayService,DisplayService>();
                               s.AddTransient<DisplayViewModel>();
+                              s.AddTransient<TimerViewModel>();
+
                           })
                           .Build();
             await AppHost.StartAsync();

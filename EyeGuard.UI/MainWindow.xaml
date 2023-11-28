@@ -22,6 +22,8 @@
     <hc:Window.Resources>
         <DropShadowEffect x:Key="shadowEffect" Opacity=".2"  ShadowDepth="0"/>
     </hc:Window.Resources>
+    <Grid>
+        
     <TabControl TabStripPlacement="Left" Margin="0 0 00 0">
         <TabItem Header="Display">
             <views:DisplayView/>
@@ -34,4 +36,18 @@
         </TabItem>
         <TabItem Header ="About"/>
     </TabControl>
+    <hc:NotifyIcon Visibility="Visible">
+            <hc:NotifyIcon.ContextContent>
+                <Border CornerRadius="4" Margin="10" Background="{DynamicResource RegionBrush}" Effect="{StaticResource EffectShadow2}">
+                    <StackPanel VerticalAlignment="Center" Margin="16">
+                        <Path Width="100" Height="100" Fill="#f06632" />
+                        <StackPanel Margin="0,16,0,0" HorizontalAlignment="Center" Orientation="Horizontal">
+                            <Button  MinWidth="100" />
+                            <Button  Margin="16,0,0,0" MinWidth="100" />
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </hc:NotifyIcon.ContextContent>
+        </hc:NotifyIcon>
+    </Grid>
 </hc:Window>
